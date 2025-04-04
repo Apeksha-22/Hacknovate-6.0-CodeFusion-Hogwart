@@ -12,15 +12,17 @@ const sidebar = document.getElementById('sidebar');
 const xpDisplay = document.getElementById("xp-display");
 const xpBar = document.getElementById("xp-bar");
 
-window.onload = () => {
-    let sidebarElement = document.getElementById("sidebar");
+window.addEventListener("DOMContentLoaded", () => {
+    const sidebarElement = document.getElementById("sidebar");
     if (!sidebarElement) {
         console.error("Sidebar container not found!");
         return;
     }
 
+    historyStack.push(currentPath); // Add home to history for back to work initially
     loadSidebar(require('os').homedir(), sidebarElement);
-};
+    loadFiles(currentPath);
+});
 
 // 📂 Load Sidebar Directory Tree
 function loadSidebar(dirPath, parentElement) {
@@ -65,10 +67,9 @@ function loadSidebar(dirPath, parentElement) {
     }
 
     function loadSubFolders(folderPath, parent) {
-        parent.innerHTML = ''; // Clear existing subfolders
+        parent.innerHTML = '';
         fs.readdir(folderPath, { withFileTypes: true }, (err, files) => {
             if (err) return console.error("Error loading subfolders:", err);
-
             files.filter(file => file.isDirectory()).forEach(subDir => {
                 createSidebarItem(path.join(folderPath, subDir.name), subDir.name, parent);
             });
@@ -78,11 +79,30 @@ function loadSidebar(dirPath, parentElement) {
     createSidebarItem(require('os').homedir(), "Home", parentElement);
 }
 
+function updateBreadcrumb(dirPath) {
+    breadcrumb.innerHTML = '';
+    const parts = dirPath.split(path.sep);
+    let fullPath = '';
+
+    parts.forEach((part, index) => {
+        if (!part) return;
+        fullPath += (index === 0 && process.platform === 'win32') ? part : path.sep + part;
+
+        const span = document.createElement('span');
+        span.textContent = part;
+        span.style.cursor = 'pointer';
+        span.style.marginRight = '5px';
+        span.onclick = () => loadFiles(fullPath);
+
+        breadcrumb.appendChild(span);
+        if (index < parts.length - 1) breadcrumb.appendChild(document.createTextNode(' / '));
+    });
+}
 
 // 📂 Load Files in Main Explorer
 async function loadFiles(dirPath) {
     fileViewer.innerHTML = '';
-    breadcrumb.textContent = `📂 ${dirPath}`;
+    updateBreadcrumb(dirPath);
     currentPath = dirPath;
 
     if (!localStorage.getItem(dirPath)) {
@@ -96,7 +116,6 @@ async function loadFiles(dirPath) {
         let fileList = await Promise.all(files.map(async (file) => {
             let filePath = path.join(dirPath, file.name);
             let stats = await fs.stat(filePath);
-
             return {
                 name: file.name,
                 path: filePath,
@@ -118,7 +137,7 @@ async function loadFiles(dirPath) {
 
             if (file.isDirectory) {
                 fileElement.classList.add('folder-item');
-                fileElement.textContent = "📂 " + file.name; // Ensure folder icon
+                fileElement.textContent = "📂 " + file.name;
                 fileElement.onclick = () => {
                     historyStack.push(currentPath);
                     fileElement.classList.add('hidden-passage');
@@ -129,6 +148,23 @@ async function loadFiles(dirPath) {
                 fileElement.draggable = true;
                 fileElement.ondragstart = (e) => {
                     e.dataTransfer.setData('text/plain', file.path);
+                };
+
+                fileElement.onmouseenter = () => {
+                    if (file.type === ".txt" || file.type === ".md") {
+                        fs.readFile(file.path, 'utf-8', (err, data) => {
+                            if (err) return;
+                            const preview = document.createElement('div');
+                            preview.classList.add('file-preview');
+                            preview.textContent = data.slice(0, 200);
+                            fileElement.appendChild(preview);
+                        });
+                    }
+                };
+
+                fileElement.onmouseleave = () => {
+                    const preview = fileElement.querySelector('.file-preview');
+                    if (preview) fileElement.removeChild(preview);
                 };
             }
 
@@ -141,7 +177,6 @@ async function loadFiles(dirPath) {
             fileViewer.appendChild(fileElement);
         });
 
-        loadSidebar(require('os').homedir(), sidebar);
     } catch (err) {
         console.error("Error loading files:", err);
     }
@@ -184,33 +219,43 @@ function updateXP(reload = true) {
 
 // 🔙 Back Button
 document.getElementById('back-btn').addEventListener('click', () => {
+    console.log("History stack:", historyStack);
     if (historyStack.length > 0) {
         const prevPath = historyStack.pop();
+        console.log("Going back to:", prevPath);
         loadFiles(prevPath);
+    } else {
+        console.log("No history to go back to.");
     }
 });
 
 // 🔍 Search Bar
+let searchTimeout;
 document.getElementById('search-bar').addEventListener('input', (e) => {
-    const query = e.target.value.toLowerCase();
-    document.querySelectorAll('.file-item').forEach(file => {
-        file.style.display = file.textContent.toLowerCase().includes(query) ? 'block' : 'none';
-    });
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => {
+        const query = e.target.value.toLowerCase();
+        document.querySelectorAll('.file-item').forEach(file => {
+            file.style.display = file.textContent.toLowerCase().includes(query) ? 'block' : 'none';
+        });
+    }, 200);
 });
 
 // 🌙 Dark Mode Toggle
 document.getElementById("dark-mode-toggle").addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
+    
 });
 
+// 🧮 Sorting Change
 document.getElementById("sort-options").addEventListener("change", () => {
     loadFiles(currentPath);
 });
 
-// ⏳ Time-Based XP Gain (1 XP per minute)
+// ⏳ Time-Based XP Gain
 setInterval(() => {
     userXP += 1;
     updateXP(false);
 }, 60000);
 
-loadFiles(currentPath);
+// No duplicate loadFiles() call needed here.

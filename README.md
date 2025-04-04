@@ -75,20 +75,47 @@ Install individual magical components (Sorting Hat, Marauder’s Map, Owl Post, 
 ---
 
 ## 📁 Repository Structure
+
+```bash
 hogwarts-os/
 ├── iso/                        # Complete OS build files (for full ISO)
+│   ├── boot/                   # Bootloader files with Hogwarts branding
+│   ├── casper/                 # Filesystem (squashfs) for live system
+│   ├── preseed/                # Automated installation config (optional)
+│   └── README.md               # Instructions for building from source
+│
 ├── modules/                   # Individual magical features/modules
-│   ├── sorting-hat/
-│   ├── marauders-map/
-│   ├── owl-post/
-│   ├── potion-installer/
-│   ├── enchanted-portrait/
-│   └── ...
-├── assets/                    # Wallpapers, animations, icons
-├── scripts/                   # Startup, theme switchers, and spell-terminal logic
-├── docs/                      # Architecture diagrams, presentation, etc.
-├── README.md
-└── LICENSE
+│   ├── sorting-hat/           # House selection system
+│   ├── marauders-map/         # Electron-based file explorer with AI
+│   ├── owl-post/              # Notification system with owl-style popups
+│   ├── potion-installer/      # Gamified app installer
+│   ├── enchanted-portrait/    # AI Assistant with interactive portrait
+│   ├── patronus-lockscreen/   # Custom login screen (GDM/SDDM)
+│   └── quidditch-game/        # Mini-game built with Python & Pygame
+│
+├── assets/                    # Wallpapers, icons, logos, sounds, animations
+│   ├── wallpapers/
+│   ├── icons/
+│   ├── sounds/
+│   └── animations/
+│
+├── scripts/                   # Theme switchers, spell terminal, setup tools
+│   ├── install.sh             # Full system setup script
+│   ├── theme-switcher.sh      # Switch house themes manually
+│   ├── spell-terminal.sh      # Spells mapped to terminal commands
+│   └── startup-animation/     # Hogwarts startup logo and animation files
+│
+├── docs/                      # Architecture diagrams, presentation, media
+│   ├── architecture.png
+│   ├── screenshots/
+│   └── demo.mp4
+│
+├── .github/                   # GitHub workflows and issue templates
+│
+├── README.md                  # This file (project overview)
+├── LICENSE                    # MIT License
+└── CONTRIBUTING.md            # Guidelines for contributors (optional)
+
 
 ---
 

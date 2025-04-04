@@ -137,3 +137,8 @@ curl -sL https://hogwartsos.io/install.sh | bash
 
 🧙‍♂️ Wizard Duel Mode – Battle AI wizards in terminal-based coding challenges!
 
+## 📝 Feedback & Support  
+We would love to hear your thoughts! Fill out the form below:  
+[📋 Submit Your Feedback]([https://forms.gle/YOUR-FORM-LINK](https://docs.google.com/forms/d/1yDVWQbo8KRJbQ3-hQJpZArPl53TDeWweGjXnt1ZEiVk/edit))
+
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potion Brewer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Potion Brewing App Installer</h1>
+
+    <div class="container">
+        <!-- 🟢 Install Section -->
+        <div class="install-section">
+            <h2>Install an App</h2>
+            <input type="text" id="app-input" placeholder="Enter app name (e.g., firefox)" />
+            <button id="add-app-button">Add</button>
+            <div id="install-cauldron" class="cauldron">Drop ingredients (apps) here</div>
+            <button id="brew-button">Brew Installation Potion</button>
+        </div>
+
+        <!-- 🏺 Central Cauldron -->
+        <div class="cauldron-wrapper">
+            <div id="cauldron">
+                <div id="smoke"></div>
+                <p>🔥 The Cauldron 🔥</p>
+            </div>
+        </div>
+
+        <!-- 🔴 Uninstall Section -->
+        <div class="uninstall-section">
+            <h2>Uninstall an App</h2>
+            <input type="text" id="uninstall-input" placeholder="Enter app name to remove" />
+            <button id="remove-app-button">Remove</button>
+            <div id="uninstall-cauldron" class="cauldron">Drop installed apps here</div>
+            <button id="brew-uninstall-button">Brew Uninstall Potion</button>
+        </div>
+    </div>
+
+    <!-- Log Outputs -->
+    <div id="log-container">
+        <h3>Installation Progress</h3>
+        <pre id="log-output">Waiting for potion to brew...</pre>
+    </div>
+    <div id="history-container">
+        <h3>Installation History</h3>
+        <div id="history-output">Loading history...</div>
+    </div>
+    
+    <div id="uninstall-log-container">
+        <h3>Uninstallation Progress</h3>
+        <pre id="uninstall-log-output">Waiting for a spell to remove apps...</pre>
+    </div>
+    
+
+    <script src="renderer.js"></script>
+</body>
+</html>

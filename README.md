@@ -115,7 +115,7 @@ hogwarts-os/
 ├── README.md                  # This file (project overview)
 ├── LICENSE                    # MIT License
 └── CONTRIBUTING.md            # Guidelines for contributors (optional)
-
+```
 
 ---
 

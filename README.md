@@ -123,5 +123,7 @@ curl -sL https://hogwartsos.io/install.sh | bash
 📝 Feedback & Support
 Your feedback helps us make HogwartsOS even more magical!
 
-📋 Submit Your Feedback
+[📋 Submit Your Feedback](https://docs.google.com/forms/d/1yDVWQbo8KRJbQ3-hQJpZArPl53TDeWweGjXnt1ZEiVk/edit)
+
+
 

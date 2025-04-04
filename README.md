@@ -1,128 +1,133 @@
-# HogwartsOS – The Ultimate Wizarding Experience for Your PC 🏰
+# 🧙‍♂️ Hogwarts OS – A Magical Linux-Based Operating System
 
-Hey there, young wizard! Ever wished your computer felt more magical? Welcome to HogwartsOS—a one-of-a-kind, Hogwarts-themed operating system designed to make your desktop feel like it belongs in the wizarding world.
-From enchanted terminals to spell-based commands, potion-inspired app installations, and a talking portrait assistant, this OS isn’t just software—it’s an adventure!
+Welcome to **Hogwarts OS**, a fully immersive and wizardry-themed operating system built on top of Linux Mint Cinnamon 21.3. Inspired by the world of **Harry Potter**, this project reimagines the computing experience with a unique blend of **custom themes, spell-based terminal commands, AI-powered tools, gamification, and interactive visuals**.
 
-⚡ Experience the Magic
-✨ Why settle for an ordinary OS when you can have one infused with wizardry?
+Developed as part of the **Hackanovate Hackathon** at **ABES Institute**, Hogwarts OS is designed to combine fun, functionality, and fantasy for all magic and tech enthusiasts.
 
-🔹 A dynamic UI that changes based on your Hogwarts house 🏰
-🔹 A spell-powered terminal where you can cast commands 🪄
-🔹 A Marauder’s Map-inspired file explorer that unfolds like parchment 🗺
-🔹 A potion brewing system for installing apps like a true wizard 🧪
-🔹 An AI-powered talking portrait to guide you 🎭
-🔹 Real-time house points & XP system to gamify your experience 🎖
+---
 
-✨ Features That Bring Hogwarts to Life
-🎩 1. The Sorting Hat & House-Themed UI
-Your journey begins at Hogwarts!
+## 🧩 Problem Statement
 
-🔮 The Sorting Hat will place you into Gryffindor, Slytherin, Ravenclaw, or Hufflepuff—either through a magical quiz or by random selection.
+Most operating systems offer a generic, monotonous user experience, especially for creative users and students who crave engagement, personalization, and intuitive design.
 
-🏰 Your house determines your UI theme, wallpapers, animations, and even unique sound effects!
+Hogwarts OS solves this by:
 
-🦁 Gryffindor – Bold & adventurous theme
+- ✨ Turning the entire OS into a **magical universe** with house-based personalization.
+- 🧠 Embedding **AI-powered tools** for intuitive interactions.
+- 🧪 Introducing **gamification, XP, and unlockables** to make computing enjoyable and rewarding.
+- 💻 Offering both **a full OS experience** and **installable modules**, making it versatile for all users.
 
-🐍 Slytherin – Mysterious & ambitious theme
+---
 
-🦅 Ravenclaw – Elegant & knowledge-driven theme
+## ✨ Key Features
 
-🦡 Hufflepuff – Warm & welcoming theme
+| Feature | Description |
+|--------|-------------|
+| 🧙 **Sorting Hat on First Login** | Assigns a Hogwarts House (Gryffindor, Ravenclaw, Hufflepuff, or Slytherin) via random choice or quiz, dynamically applying matching themes, wallpapers, and system sounds. |
+| 🗺️ **Marauder’s Map File Explorer** | Electron-based custom file explorer with parchment UI, spell-based navigation, XP unlocking, folder animations, and **Agent AI** for semantic search and smart file organization. |
+| 🔥 **House-Themed Common Room Desktop** | A fullscreen control panel with animated fireplace, house points tracker, Daily Prophet widget, Owl Post notifications, and ambient visuals. |
+| ✨ **Spell-Based Terminal** | Replace boring commands with magical spells like `Lumos` (light mode), `Nox` (dark mode), `Accio` (search), `Evanesco` (delete), `Expelliarmus` (kill process), and more. |
+| 📬 **Owl Post Notification System** | System notification system with parchment-styled popup UI and owl sounds for alerts, messages, and system events. |
+| 🧪 **Potion Brewing App Installer** | An animated app installer where users drag and drop “ingredients” (app components) to brew and install applications magically. |
+| 🧠 **AI-Powered Portrait Assistant** | A living portrait built using Agent AI / Akash Chat API, providing help, commands, and interaction like Dumbledore’s enchanted frame. |
+| 🔐 **Patronus Lock Screen** | Custom glowing Patronus-themed lock/login screen via GDM customization. |
+| 🎮 **Gamification Layer** | Earn XP, unlock secret Hogwarts areas, track House Points, uncover hidden folders/passages, and access the **Room of Requirement**. |
+| 🧹 **Secret Mode Switches** | Spell commands like `Homenum Revelio` (show users), `Sectumsempra` (force delete), and more. |
+| 🧙‍♀️ **Quidditch Mini-Game** | A fun Quidditch game built using Python & Pygame for entertainment. |
 
-🗺 2. The Marauder’s Map File Explorer
-Ever wanted to navigate your files like a true Hogwarts student?
+---
 
-📜 Your file explorer unfolds like the Marauder’s Map, revealing hidden folders as you unlock XP!
+## 🧰 Architecture Overview
 
-💡 Say "I solemnly swear that I am up to no good" to reveal secret files. Mischief managed!
+- **Frontend**: Electron (for file explorer & UI tools), HTML/CSS, GTK theming, Cinnamon customizations  
+- **Backend**: Node.js (for Electron apps), Python (for AI, automation, games), Shell scripting  
+- **AI Integration**: Agent AI / Akash Chat for smart assistant and search  
+- **System Customization**: GDM, Plymouth, Grub, GNOME/GTK for visuals, startup logos, and lock screen  
 
-🧪 3. Potion Brewing App Installer
-Installing apps shouldn’t be boring—it should be magical!
+📌 _Full system architecture diagram available in `/docs/architecture.png`_
 
-🫧 Drag and drop "ingredients" (files) into a bubbling cauldron to install new applications.
+---
 
-🔥 If you mix the wrong ingredients, you might brew a cursed app—so be careful!
+## 🛠️ How to Use Hogwarts OS
 
-🦉 4. Owl Post Notification System
-Forget boring system alerts!
+We offer **two flexible options** for trying out Hogwarts OS:
 
-📜 Whenever you receive a notification, an owl flies across your screen, carrying a parchment with your message.
+### 🧙‍♂️ Option 1: Full Hogwarts OS (ISO File)
 
-💡 Choose from Hedwig, Errol, or Pigwidgeon to be your personal owl!
+Get the **ready-to-install Hogwarts OS ISO** – a fully pre-configured Linux Mint distro with all features, themes, and magic built-in.
 
-🪄 5. Spell-Based Terminal Commands
-Your terminal is now a spellbook!
+> ✅ Best for immersive experience with everything out-of-the-box  
+> ⚠️ Requires VirtualBox, bare metal, or a USB installer
 
-Just type a spell, and magic happens:
+📥 [Download Hogwarts OS ISO](#)
 
-Spell	Effect
-lumos	Turns on light mode 🌞
-nox	Turns on dark mode 🌙
-accio [filename]	Summons a file 📂
-expelliarmus <process>	Kills a process ❌
-expecto patronum	Activates Patronus-themed lock screen ✨
-apparate <path>	Instantly navigates to a directory 🌀
-💡 Try whispering "Mischief Managed" to clear the terminal!
+---
 
-🎭 6. The Enchanted Portrait AI Assistant
-Feeling lost? Let the Hogwarts Portrait AI guide you!
+### 🧩 Option 2: Modular App Installation on Linux Mint
 
-🖼 This AI-powered talking portrait acts like a real Hogwarts painting, helping you with system commands, troubleshooting, and even answering fun wizarding world questions.
+Install individual magical components (Sorting Hat, Marauder’s Map, Owl Post, etc.) on **your existing Linux Mint** system.
 
-💡 Ask "What’s the weather like in Hogsmeade?" and get real-time updates!
+> ✅ Best for developers and users who want to add only selected features  
+> 💡 Each module comes with installation guide, setup script & dependencies
 
-🔒 7. Patronus Lock Screen & Sleep Mode
-Cast Expecto Patronum to lock your screen in true wizard fashion!
+📁 Visit the [`modules/`](#) folder to get started!
 
-✨ A glowing Patronus (Deer, Wolf, Phoenix, etc.) appears, surrounded by mist and magical energy.
+---
 
-🔮 Unlocking your screen feels like swiping a wand!
+## 📁 Repository Structure
+hogwarts-os/
+├── iso/                        # Complete OS build files (for full ISO)
+├── modules/                   # Individual magical features/modules
+│   ├── sorting-hat/
+│   ├── marauders-map/
+│   ├── owl-post/
+│   ├── potion-installer/
+│   ├── enchanted-portrait/
+│   └── ...
+├── assets/                    # Wallpapers, animations, icons
+├── scripts/                   # Startup, theme switchers, and spell-terminal logic
+├── docs/                      # Architecture diagrams, presentation, etc.
+├── README.md
+└── LICENSE
 
-🎖 8. House Points & Gamification
-Your HogwartsOS journey is more than just using a computer—it’s a challenge!
+---
 
-🏆 Earn House Points for completing tasks, using spells, and exploring the OS.
+## 🧪 Tech Stack
 
-🧙‍♂️ Compete with other users on a global leaderboard and unlock secret features as you level up!
+| Stack | Description |
+|-------|-------------|
+| 🧰 OS Base | Linux Mint Cinnamon 21.3 |
+| 🎨 UI | Electron, HTML, CSS, GTK, Plymouth |
+| 🧠 AI | Agent AI, Akash Chat API |
+| 🐍 Logic | Node.js, Python, Bash |
+| 🎮 Game | Python + Pygame |
+| 🖼️ Graphics | Blender (optional), GIMP, Inkscape |
 
-🏗 System Requirements
-💻 HogwartsOS is built on a Debian-based Linux system and works on most modern computers:
+---
 
-✅ OS Base: Ubuntu/Xubuntu
-✅ CPU: Intel/AMD (x86_64 & ARM supported)
-✅ RAM: 4GB (8GB+ recommended)
-✅ Storage: 20GB free space
-✅ Graphics: Open-source Mesa drivers / NVIDIA support
+## 📸 Screenshots
 
-🚀 Runs smoothly on mid-range hardware!
+> Coming soon in `/docs/screenshots/`
 
-🚀 How to Install HogwartsOS
-🏰 Option 1: Bootable ISO (Full OS)
-1️⃣ Download the HogwartsOS ISO 📥
-2️⃣ Create a bootable USB using Rufus or Etcher
-3️⃣ Restart your PC & boot from USB
-4️⃣ Follow the Sorting Hat onboarding process 🎩
+---
 
-🧙‍♂️ Option 2: Install on Existing Linux
-Already have Linux? Just run this spell in your terminal:
+## 🎥 Demo Video
 
-bash
-Copy
-Edit
-curl -sL https://hogwartsos.io/install.sh | bash
-📌 Future Magical Updates
-🔮 Coming soon!
+> Coming soon in `/docs/demo.mp4`
 
-🏅 Triwizard Tournament Coding Mini-Game
-🎙 Voice-controlled spells (say "Lumos" to enable light mode!)
-☁️ Hogsmeade Weather Widget
-📚 Magic Library – AI-powered search for books & docs
-🧙‍♂️ Wizard Duel Mode – Challenge AI wizards in coding battles!
+---
 
-📝 Feedback & Support
-Your feedback helps us make HogwartsOS even more magical!
+## 🙌 Team Credits
 
-[📋 Submit Your Feedback](https://docs.google.com/forms/d/1yDVWQbo8KRJbQ3-hQJpZArPl53TDeWweGjXnt1ZEiVk/edit)
+> Project by: **[Your Team Name / Members]**  
+> Built with 💛 at **Hackanovate Hackathon** – ABES Institute of Technology
 
+---
 
+## 🛡️ License
 
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+### ⭐ If you love magic + Linux, consider giving us a star!

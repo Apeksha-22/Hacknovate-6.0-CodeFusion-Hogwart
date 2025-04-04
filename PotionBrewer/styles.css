@@ -103,42 +103,115 @@ body {
 */
 
 /* ------------------ new addition -------------------- */
-
+/* General Styles */
 body {
     font-family: "Harry Potter", sans-serif;
     background-color: #1c1c1c;
     color: white;
     text-align: center;
+    padding: 20px;
+    background: url(./assets/potion-lab.jpg) center;
 }
+
+/* 🔍 Common Styles for Input Fields */
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 15px;
+}
+
+/* ✨ Improved Input Field */
+input[type="text"] {
+    width: 100%;
+    padding: 12px 40px 12px 15px; /* Space for icon */
+    font-size: 16px;
+    background-color: #2b2b2b;
+    color: white;
+    border: 2px solid gold;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🖱️ Hover & Focus Effects */
+input[type="text"]:hover, 
+input[type="text"]:focus {
+    border-color: lightgoldenrodyellow;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+/* 🟡 Icon Inside Input Field */
+.input-container i {
+    position: absolute;
+    right: 12px;
+    color: lightgoldenrodyellow;
+    font-size: 18px;
+}
+
+/* 🎨 Install & Uninstall Specific Containers */
+.install-section .input-container,
+.uninstall-section .input-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 768px) {
+    input[type="text"] {
+        font-size: 14px;
+        padding: 10px 35px 10px 12px;
+    }
+
+    .input-container i {
+        font-size: 16px;
+        right: 10px;
+    }
+}
+
 
 .container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     margin: 30px auto;
+    gap: 20px; /* Proper gap between sections */
 }
 
-
+/* 🟢 Install & 🔴 Uninstall Sections */
 .install-section, .uninstall-section {
     width: 30%;
     padding: 20px;
     background-color: #282828;
-    border: 2px solid gold;
-    border-radius: 8px;
+    border: 2px solid gold;  /* Yellow border for key sections */
+    border-radius: 10px;
     text-align: center;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
-
+/* 🔥 Central Cauldron */
 .cauldron-wrapper {
     width: 30%;
     text-align: center;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #cauldron {
     width: 300px;
     height: 300px;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-    background: url(./assets/cauldron.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(./assets/cauldron.png) no-repeat center;
+    background-size: contain;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    border-radius: 50%;
+    position: relative;
     animation: bubbling 2s infinite alternate;
 }
 
@@ -147,48 +220,49 @@ body {
     100% { transform: scale(1.05); }
 }
 
-
+/* Cauldron Text */
 .cauldron p {
     color: white;
     font-size: 18px;
+    font-weight: bold;
 }
 
+/* 🟩 Install & 🔴 Uninstall Cauldrons */
+#install-cauldron, #uninstall-cauldron {
+    width: 250px;
+    height: 150px;
+    margin: 15px auto;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
 
 #install-cauldron {
-    width: 250px;
-    height: 150px;
-    margin: 10px auto;
     background-color: darkgreen;
     color: white;
-    text-align: center;
     border: 2px dashed lightgreen;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
-
 
 #uninstall-cauldron {
-    width: 250px;
-    height: 150px;
-    margin: 10px auto;
     background-color: darkred;
     color: white;
-    text-align: center;
     border: 2px dashed lightcoral;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-
-#brew-button, #brew-uninstall-button {
+/* 🎩 Buttons */
+button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-top: 10px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out;
 }
 
 #brew-button {
@@ -201,48 +275,69 @@ body {
     color: white;
 }
 
+button:hover {
+    transform: scale(1.05);
+}
 
+/* 📜 Log Sections */
 .log-container {
     display: flex;
-    justify-content: space-around;
-    width: 80%;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
     margin: 30px auto;
-    text-align: left;
+    gap: 20px;
 }
 
-.log-container div {
-    width: 45%;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: lightgreen;
-    border: 2px solid gold;
-    font-family: monospace;
-    padding: 10px;
-    min-height: 50px;
+.log-box {
+    flex: 1;
+    background: #2a2a3a;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    overflow-y: auto;
+    min-height: 150px;
+    max-height: 250px;
+    text-decoration: none;
 }
 
-#log-container, #uninstall-log-container {
-    width: 80%;
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 10px;
+/* 📜 Individual Logs */
+#log-container, #history-container, #uninstall-log-container {
+    flex: 1;
+    padding: 15px;
     background-color: rgba(0, 0, 0, 0.8);
     color: lightgreen;
-    border: 2px solid gold;
+    border-radius: 8px;
     font-family: monospace;
     text-align: left;
     min-height: 100px;
-    max-height: 250px; 
-    overflow-y: auto; 
-    white-space: pre-wrap; 
-    word-wrap: break-word; 
-} 
-
-
-@media (min-width: 1024px) {
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    max-height: 250px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
+#history-container {
+    color: cyan;
+}
+
+#uninstall-log-container {
+    color: lightcoral;
+}
+
+/* 📱 Responsive Layout */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .install-section, .uninstall-section, .cauldron-wrapper {
+        width: 80%;
+    }
+
+    .log-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

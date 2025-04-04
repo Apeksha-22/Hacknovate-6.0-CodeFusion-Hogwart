@@ -9,17 +9,21 @@
 <body>
     <h1>Potion Brewing App Installer</h1>
 
+    <!-- 🟢 First Row (Same Layout) -->
     <div class="container">
-        <!-- 🟢 Install Section -->
+        <!-- Install Section -->
         <div class="install-section">
             <h2>Install an App</h2>
-            <input type="text" id="app-input" placeholder="Enter app name (e.g., firefox)" />
+            <div class="input-container">
+                <input type="text" id="app-input" placeholder="Enter app name (e.g., Firefox)">
+                <i class="fas fa-search"></i> <!-- FontAwesome Search Icon -->
+            </div>
             <button id="add-app-button">Add</button>
             <div id="install-cauldron" class="cauldron">Drop ingredients (apps) here</div>
             <button id="brew-button">Brew Installation Potion</button>
         </div>
 
-        <!-- 🏺 Central Cauldron -->
+        <!-- Central Cauldron -->
         <div class="cauldron-wrapper">
             <div id="cauldron">
                 <div id="smoke"></div>
@@ -27,31 +31,39 @@
             </div>
         </div>
 
-        <!-- 🔴 Uninstall Section -->
+        <!-- Uninstall Section -->
         <div class="uninstall-section">
             <h2>Uninstall an App</h2>
-            <input type="text" id="uninstall-input" placeholder="Enter app name to remove" />
+            <div class="input-container">
+                <input type="text" id="uninstall-input" placeholder="Enter app name to remove">
+                <i class="fas fa-trash"></i> <!-- FontAwesome Trash Icon -->
+            </div>
             <button id="remove-app-button">Remove</button>
             <div id="uninstall-cauldron" class="cauldron">Drop installed apps here</div>
             <button id="brew-uninstall-button">Brew Uninstall Potion</button>
         </div>
     </div>
 
-    <!-- Log Outputs -->
-    <div id="log-container">
-        <h3>Installation Progress</h3>
-        <pre id="log-output">Waiting for potion to brew...</pre>
+    <!-- 🔹 Second Row (Three-Column Layout) -->
+    <div class="log-container">
+        <!-- Install Log (Left) -->
+        <div class="log-box">
+            <h3>Installation Progress</h3>
+            <pre id="log-output">Waiting for potion to brew...</pre>
+        </div>
+
+        <!-- History Log (Center) -->
+        <div class="log-box">
+            <h3>Installation History</h3>
+            <div id="history-output">Loading history...</div>
+        </div>
+
+        <!-- Uninstall Log (Right) -->
+        <div class="log-box">
+            <h3>Uninstallation Progress</h3>
+            <pre id="uninstall-log-output">Waiting for a spell to remove apps...</pre>
+        </div>
     </div>
-    <div id="history-container">
-        <h3>Installation History</h3>
-        <div id="history-output">Loading history...</div>
-    </div>
-    
-    <div id="uninstall-log-container">
-        <h3>Uninstallation Progress</h3>
-        <pre id="uninstall-log-output">Waiting for a spell to remove apps...</pre>
-    </div>
-    
 
     <script src="renderer.js"></script>
 </body>

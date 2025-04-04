@@ -14,11 +14,13 @@ h1 {
 
 #file-viewer {
     width: 80%;
-    margin: auto;
+    /* margin: auto; */
     padding: 10px;
     border: 2px solid black;
     background-color: rgba(255, 255, 224, 0.8);
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 700px;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -31,6 +33,7 @@ h1 {
     border: 1px solid black;
     cursor: pointer;
     font-weight: bold;
+    height: 47.36px;
     transition: all 0.4s ease-in-out;
     animation: fadeIn 1s ease-in-out;
 }
@@ -84,6 +87,11 @@ h1 {
     padding: 10px;
     border-right: 2px solid black;
     overflow-y: auto;
+    text-align: left;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    height: 880px;
+    overflow-x: auto;
 }
 
 #file-viewer {
@@ -95,6 +103,8 @@ h1 {
     cursor: pointer;
     padding: 5px;
     font-weight: bold;
+    height:47.36px;
+    width: 254.47px;
 }
 
 .dir-item:hover {
@@ -126,7 +136,11 @@ h1 {
     background: rgba(255, 255, 224, 0.8);
     border-bottom: 2px solid black;
 }
-
+.dark-mode #nav-bar{
+    background-color: rgba(50, 50, 50, 0.8);
+    background-size: cover;
+    color: #ffffff;
+}
 #back-btn {
     padding: 5px 10px;
     cursor: pointer;
@@ -164,6 +178,12 @@ h1 {
     background-color: #222;
     background-size: cover;
     color: #000000;
+}
+
+.dark-mode #sidebar {
+    background-color: rgba(50, 50, 50, 0.8);
+    background-size: cover;
+    color: #ffffff;
 }
 
 .dark-mode #file-viewer {
@@ -234,7 +254,22 @@ h1 {
     display: none;
 }
 
+.file-preview {
+    position: absolute;
+    background: #fff8dc;
+    border: 1px solid black;
+    padding: 5px;
+    max-width: 300px;
+    max-height: 150px;
+    overflow: auto;
+    z-index: 100;
+    font-size: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
 
-
-
-
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 5px;
+}

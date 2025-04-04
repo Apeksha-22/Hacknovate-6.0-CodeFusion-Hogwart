@@ -1,8 +1,8 @@
 # HogwartsOS – The Ultimate Wizarding Experience for Your PC 🏰
 
-🎩✨ Welcome, young wizard! Ever wished your computer felt more magical? HogwartsOS is an immersive, Hogwarts-themed operating system designed to bring the wizarding world to your desktop.
+<b>🎩✨ Welcome, young wizard! Ever wished your computer felt more magical? HogwartsOS is an immersive, Hogwarts-themed operating system designed to bring the wizarding world to your desktop.
 
-🔮 With animated spells, house sorting, potion brewing app installation, an enchanted terminal, and an AI-powered talking portrait assistant, HogwartsOS makes technology feel like real magic!
+🔮 With animated spells, house sorting, potion brewing app installation, an enchanted terminal, and an AI-powered talking portrait assistant, HogwartsOS makes technology feel like real magic!<b>
 
 ⚡ Experience Magic on Your Desktop!
 💡 Dynamic UI 🎭 Gamified XP System 🧙‍♂️ Wizard AI Assistant 🔥 Real-Time House Points 🪄 Spell-based Terminal

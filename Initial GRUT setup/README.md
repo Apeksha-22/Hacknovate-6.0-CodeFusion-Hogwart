@@ -44,17 +44,9 @@ Each house completely re-themes your Hogwarts OS — from wallpapers to terminal
 
 ## 📸 Screenshots
 
-| Sorting Hat Welcome | House Reveal |
-|---------------------|--------------|
-| ![Sorting Hat](./assets/sorting-hat.png) | ![House Assigned](./assets/house-screen.png) |
+![pat-1](https://github.com/user-attachments/assets/31f19b3d-f553-470b-8b46-626df6401091)
 
----
-
-## 🎥 Demo Video
-
-Watch it in action!  
-[![Watch the demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
-
+![pat-2](https://github.com/user-attachments/assets/98030cd9-ec04-4037-aaea-754b9aa1a010)
 ---
 
 ## 🛠 Prerequisites

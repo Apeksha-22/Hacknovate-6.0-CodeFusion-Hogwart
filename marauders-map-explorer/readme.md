@@ -33,9 +33,10 @@ A magical, Harry Potter-themed file explorer built with Electron. Navigate your 
 
 ---
 
-## 📸 Screenshots
+## 📸 Video Demo
 
-> *Add your screenshots here after app launch!*
+https://github.com/user-attachments/assets/5274317b-81b4-4a5b-a43b-424adfe3fcee
+
 
 ---
 

@@ -35,7 +35,9 @@ A magical, voice-activated AI assistant built with Electron and Akash API. Ask a
 
 ## 📸 Screenshots
 
-> *Insert screenshots of Dumbledore’s chat window responding to magical queries.*
+
+![ai-1](https://github.com/user-attachments/assets/d6215830-163d-4b42-ab04-e11a4e005411)
+Screenshots of Dumbledore’s chat window responding to magical queries.*
 
 ---
 

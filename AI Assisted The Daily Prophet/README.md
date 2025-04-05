@@ -37,11 +37,11 @@ A magical, AI-powered wizarding newspaper brought to life with ✨ **ElectronJS*
 
 ## 3. 🖼️ Screenshots
 
-> *(Add relevant screenshots)*  
-> - Main newspaper view  
-> - AgentAI headline generation  
+![np-1](https://github.com/user-attachments/assets/d463cd8b-16ec-41d0-b079-e41341d2e5b0)
 
----
+
+---![np-2](https://github.com/user-attachments/assets/57d528d9-f94e-403c-a310-01b2b4ed5691)
+
 
 ## 4. 🛠️ Tech Stack
 

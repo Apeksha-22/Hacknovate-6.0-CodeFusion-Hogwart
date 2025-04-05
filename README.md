@@ -146,7 +146,7 @@ hogwarts-os/
 
 ## 🙌 Team Credits
 
-> Project by: **[Your Team Name / Members]**  
+> Project by: **[CodeFusion / Members: Kanika Singhal | Nishant Harkut | Apeksha Jain]**  
 > Built with 💛 at **Hackanovate Hackathon** – ABES Institute of Technology
 
 ---

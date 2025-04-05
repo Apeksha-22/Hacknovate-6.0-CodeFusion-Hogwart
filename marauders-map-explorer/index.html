@@ -5,6 +5,13 @@
   </head>
 
   <body>
+    <header>
+      <div id="xp-container">
+        <span id="xp-display">XP: 0</span>
+        <div id="xp-bar"></div>
+      </div>
+      <h1>Marauder's Map AI File Explorer</h1>
+    </header>
     <!-- Navigation & Search -->
     <div id="nav-bar">
       <button id="back-btn">⬅ Back</button>
@@ -24,12 +31,16 @@
 
     <div class="content">
       <div id="sidebar" class="sidebar-container"></div>
-    
 
-    <!-- File Explorer -->
-    <div id="file-viewer"></div>
+      <!-- File Explorer -->
+      <div id="file-viewer"></div>
     </div>
-    
+    <h2>AI File Helper</h2>
+    <div id="spell-input-container">
+      <input type="text" id="spell-input" placeholder="🪄 Cast a spell..." />
+      <button id="cast-btn">Cast</button>
+    </div>
+    <pre id="spell-output"></pre>
 
     <script src="renderer.js"></script>
   </body>

@@ -140,7 +140,10 @@ hogwarts-os/
 
 ## 🎥 Demo Video
 
-> Coming soon in `/docs/demo.mp4`
+
+https://github.com/user-attachments/assets/84143772-869f-4d05-89a2-b5ab23416cf2
+
+
 
 ---
 
